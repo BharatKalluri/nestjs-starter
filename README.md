@@ -17,6 +17,7 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 
 ## TODO
 
+- [ ] Basic Rate Limiting
 - [ ] Swagger setup
 - [ ] Firebase integration
 - [ ] AWS config file sharing for docker
