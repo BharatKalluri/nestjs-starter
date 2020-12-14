@@ -16,10 +16,10 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - AWS SDK integration, sample s3 client as a starting point
 - Rate limiting (limit each IP to 100 requests per 15 minutes) using `express-rate-limit`
 - OpenAPI/Swagger setup using `@nestjs/swagger`
+- Data validation using `class-validator`
 
 ## TODO
 
-- [ ] Validation pipes using [`class-validator`](https://github.com/typestack/class-validator)
 - [ ] Firebase integration
 - [ ] AWS config file sharing for docker
 

@@ -14,7 +14,6 @@ export class HealthCheckController {
 
   @Get()
   getHealthCheck(): IHealthCheck {
-    this.logger.info('Controller hit');
     return this.healthCheckService.getHealthCheck();
   }
   @Get('/s3')
