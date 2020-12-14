@@ -18,6 +18,8 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 ## TODO
 
 - [ ] AWS config file sharing for docker
+- [ ] Swagger setup
+- [ ] Firebase integration
 
 ## Installation
 
