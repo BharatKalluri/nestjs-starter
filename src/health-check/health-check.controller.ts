@@ -17,4 +17,8 @@ export class HealthCheckController {
     this.logger.info('Controller hit');
     return this.healthCheckService.getHealthCheck();
   }
+  @Get('/s3')
+  getS3HealthCheck(): Promise<IHealthCheck> {
+    return this.healthCheckService.getS3HealthCheck();
+  }
 }

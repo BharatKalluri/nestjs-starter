@@ -1,4 +1,4 @@
-<p align="center">
+<p>
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
@@ -13,10 +13,11 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - Per request UUID logging for easier traceability
 - Docker setup
 - Sample module setup (`health-check`) with unit testing on service, and a sample e2e test.
+- AWS SDK integration, sample s3 client as a starting point
 
 ## TODO
 
-- [ ] AWS integration using [aws-sdk](https://www.npmjs.com/package/aws-sdk)
+- [ ] AWS config file sharing for docker
 
 ## Installation
 
