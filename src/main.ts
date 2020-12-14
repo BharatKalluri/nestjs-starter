@@ -1,18 +1,28 @@
 import { NestFactory } from '@nestjs/core';
 import * as rateLimit from 'express-rate-limit';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // TODO: Change these as per project and scale
+  // Rate limiting: limit each IP to 100 requests per 15 minutes
   app.use(
-    // limit each IP to 100 requests per 15 minutes
     rateLimit({
       windowMs: 15 * 60 * 1000,
       max: 100,
     }),
   );
+
+  // Open API/Swagger setup, visit /api for Swagger UI
+  const options = new DocumentBuilder()
+    .setTitle('NestJS server')
+    .setDescription('The NestJS server API description')
+    .setVersion('0.1')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
 
   await app.listen(3000);
 }
