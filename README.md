@@ -19,7 +19,7 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 
 ## TODO
 
-- [ ] Validation pipes using io-ts
+- [ ] Validation pipes using [`class-validator`](https://github.com/typestack/class-validator)
 - [ ] Firebase integration
 - [ ] AWS config file sharing for docker
 
