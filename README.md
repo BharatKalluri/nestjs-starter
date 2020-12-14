@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-# NestJS Typescript starter
+# An opinionated NestJS Typescript starter
 
 ## Features
 
@@ -14,14 +14,14 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - Docker setup
 - Sample module setup (`health-check`) with unit testing on service, and a sample e2e test.
 - AWS SDK integration, sample s3 client as a starting point
-- Rate limiting (limit each IP to 100 requests per 15 minutes) using `express-rate-limit`
+- Rate limiting (pre configured to limit each IP to 100 requests per 15 minutes) using `express-rate-limit`
 - OpenAPI/Swagger setup using `@nestjs/swagger`
 - Data validation using `class-validator`
 
 ## TODO
 
 - [ ] Firebase integration
-- [ ] AWS config file sharing for docker
+- [ ] share local AWS config file with docker
 
 ## Installation
 
