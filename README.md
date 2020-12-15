@@ -17,12 +17,12 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - Rate limiting (pre configured to limit each IP to 100 requests per 15 minutes) using `express-rate-limit`
 - OpenAPI/Swagger setup using `@nestjs/swagger`
 - Data validation using `class-validator`
+- JSON based config setup. Sample config at `config.example.json`
+- Global exception handlers to capture `ServerError` with error codes and respond to client with corresponding error messages from `errorCodes.json`
+- Connected to MongoDB using `@nestjs/mongoose`, using URL from config.
 
 ## TODO
 
-- [ ] JSON based configuration
-- [ ] Error codes based global error handlers
-- [ ] Mongo integration using `mongoose`
 - [ ] share local AWS config file with docker
 
 ## Installation
