@@ -3,6 +3,7 @@ import * as rateLimit from 'express-rate-limit';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { ErrorsInterceptor } from './shared/interceptors/errors.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -27,6 +28,8 @@ async function bootstrap() {
 
   // Global validation pipe based on DTO class, also transforms payload to DTO object
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
+
+  app.useGlobalInterceptors(new ErrorsInterceptor());
 
   await app.listen(3000);
 }

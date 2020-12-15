@@ -15,6 +15,7 @@ export class HealthCheckService {
     logger.setContext(HealthCheckService.name);
   }
   getHealthCheck(): IHealthCheck {
+    // throw new ServerError(ErrorCodes.E1001, 'Sample error message');
     return { success: true };
   }
 
