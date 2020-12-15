@@ -20,7 +20,9 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 
 ## TODO
 
-- [ ] Firebase integration
+- [ ] JSON based configuration
+- [ ] Error codes based global error handlers
+- [ ] Mongo integration using `mongoose`
 - [ ] share local AWS config file with docker
 
 ## Installation
