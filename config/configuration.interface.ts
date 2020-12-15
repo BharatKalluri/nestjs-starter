@@ -1,3 +1,3 @@
 export interface IConfiguration {
-  databaseURL: string;
+  MONGODB_URI: string;
 }

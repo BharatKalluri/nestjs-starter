@@ -1,0 +1,5 @@
+{
+  "mongo": {
+    "url": "mongodb+srv://username:password@cluster0.pc6hv.mongodb.net/database"
+  }
+}

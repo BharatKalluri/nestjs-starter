@@ -1,14 +1,16 @@
 import { Module } from '@nestjs/common';
 import { HealthCheckModule } from './health-check/health-check.module';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
 import configuration from '../config/configuration';
 import { v4 as uuidv4 } from 'uuid';
 import { ClientsModule } from './clients/clients.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 const configModule = ConfigModule.forRoot({
   isGlobal: true,
   load: [configuration],
+  ignoreEnvFile: true,
 });
 
 const loggerModule = LoggerModule.forRoot({
@@ -20,8 +22,22 @@ const loggerModule = LoggerModule.forRoot({
   },
 });
 
+const mongooseModule = MongooseModule.forRootAsync({
+  imports: [ConfigService],
+  useFactory: async (configService: ConfigService) => ({
+    uri: configService.get<string>('MONGODB_URI'),
+  }),
+  inject: [ConfigService],
+});
+
 @Module({
-  imports: [configModule, loggerModule, HealthCheckModule, ClientsModule],
+  imports: [
+    configModule,
+    loggerModule,
+    mongooseModule,
+    HealthCheckModule,
+    ClientsModule,
+  ],
   controllers: [],
   providers: [],
 })
