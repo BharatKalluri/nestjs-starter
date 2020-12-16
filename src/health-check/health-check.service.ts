@@ -10,17 +10,14 @@ import { ServerMessages } from '../shared/constants/server-messages';
 @Injectable()
 export class HealthCheckService {
   constructor(
-    // @InjectConnection() private mongooseConnection: Connection,
+    @InjectConnection() private mongooseConnection: Connection,
     private readonly logger: PinoLogger,
     private readonly s3Client: S3Service,
   ) {
     logger.setContext(HealthCheckService.name);
   }
   getHealthCheck(): IHealthCheck {
-    // throw new ServerError(
-    //   ServerMessages.SUCCESSFULLY_CREATED,
-    //   'Sample error message',
-    // );
+    // throw new ServerError(ServerMessages.E10001, 'Sample error message');
     return { success: true };
   }
 
@@ -35,7 +32,7 @@ export class HealthCheckService {
     }
   }
 
-  // async getMongoDBHealthCheck(): Promise<IHealthCheck> {
-  //   return { success: this.mongooseConnection.readyState === 1 };
-  // }
+  async getMongoDBHealthCheck(): Promise<IHealthCheck> {
+    return { success: this.mongooseConnection.readyState === 1 };
+  }
 }

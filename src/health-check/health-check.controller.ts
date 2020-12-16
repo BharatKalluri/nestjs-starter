@@ -20,8 +20,8 @@ export class HealthCheckController {
   getS3HealthCheck(): Promise<IHealthCheck> {
     return this.healthCheckService.getS3HealthCheck();
   }
-  // @Get('/mongo')
-  // getMongoHealthCheck(): Promise<IHealthCheck> {
-  //   return this.healthCheckService.getMongoDBHealthCheck();
-  // }
+  @Get('/mongo')
+  getMongoHealthCheck(): Promise<IHealthCheck> {
+    return this.healthCheckService.getMongoDBHealthCheck();
+  }
 }
