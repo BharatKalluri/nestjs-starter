@@ -37,7 +37,7 @@ const mongooseModule = MongooseModule.forRootAsync({
   imports: [
     configModule,
     loggerModule,
-    mongooseModule,
+    // mongooseModule,
     HealthCheckModule,
     ClientsModule,
   ],

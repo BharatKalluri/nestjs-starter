@@ -10,7 +10,7 @@ import { ServerMessages } from '../shared/constants/server-messages';
 @Injectable()
 export class HealthCheckService {
   constructor(
-    @InjectConnection() private mongooseConnection: Connection,
+    // @InjectConnection() private mongooseConnection: Connection,
     private readonly logger: PinoLogger,
     private readonly s3Client: S3Service,
   ) {
@@ -35,7 +35,7 @@ export class HealthCheckService {
     }
   }
 
-  async getMongoDBHealthCheck(): Promise<IHealthCheck> {
-    return { success: this.mongooseConnection.readyState === 1 };
-  }
+  // async getMongoDBHealthCheck(): Promise<IHealthCheck> {
+  //   return { success: this.mongooseConnection.readyState === 1 };
+  // }
 }
