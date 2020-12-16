@@ -14,7 +14,6 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo "TODO: Need to run tests here"
   post_build:
     commands:
       - echo Build completed on `date`
