@@ -8,8 +8,9 @@ import {
 } from '@nestjs/common';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import * as errorCodes from '../../../errorCodes.json';
+import * as messages from '../../../messages.json';
 import { ServerError } from '../errors/server-error';
+import * as _ from "lodash";
 
 @Injectable()
 export class ErrorsInterceptor implements NestInterceptor {
@@ -18,7 +19,8 @@ export class ErrorsInterceptor implements NestInterceptor {
       catchError((err: Error) => {
         if (err instanceof ServerError) {
           const errorCode = err.errorCode;
-          const isMessagePresentForCode: boolean = errorCodes.hasOwnProperty(
+          const statusCode = err.statusCode;
+          const isMessagePresentForCode: boolean = messages.hasOwnProperty(
             errorCode,
           );
           if (!isMessagePresentForCode) {
@@ -29,9 +31,9 @@ export class ErrorsInterceptor implements NestInterceptor {
             new HttpException(
               {
                 errorCode,
-                message: errorCodes[errorCode.toString()],
+                message: _.get(messages, `${errorCode.toString()}.en`),
               },
-              500,
+              (statusCode || 500),
             ),
           );
         }
