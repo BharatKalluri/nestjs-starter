@@ -16,6 +16,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo '{"mongo":{"url":"mongodb+srv://username:password@cluster0.pc6hv.mongodb.net/<dbname>"},"rateLimit":{"windowMS":15000,"count":1000}}' >> config.json
+      - yarn build
   post_build:
     commands:
       - echo Build completed on `date`
