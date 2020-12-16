@@ -4,6 +4,8 @@ import { PinoLogger } from 'nestjs-pino';
 import { S3Service } from '../clients/s3/s3.service';
 import { Connection } from 'mongoose';
 import { InjectConnection } from '@nestjs/mongoose';
+import { ServerError } from '../shared/errors/server-error';
+import { ErrorCodes } from '../shared/constants/error-codes';
 
 @Injectable()
 export class HealthCheckService {
@@ -15,18 +17,18 @@ export class HealthCheckService {
     logger.setContext(HealthCheckService.name);
   }
   getHealthCheck(): IHealthCheck {
-    // throw new ServerError(ErrorCodes.E1001, 'Sample error message');
+    // throw new ServerError(ErrorCodes.E10001, 'Sample error message');
     return { success: true };
   }
 
   async getS3HealthCheck(): Promise<IHealthCheck> {
     try {
       const bucketList = await this.s3Client.getS3BucketsList();
-      this.logger.info(bucketList);
+      this.logger.debug(bucketList);
       return { success: true };
     } catch (e) {
       this.logger.error(e);
-      return { success: false };
+      throw new ServerError(ErrorCodes.E10001, e.message, 400);
     }
   }
 

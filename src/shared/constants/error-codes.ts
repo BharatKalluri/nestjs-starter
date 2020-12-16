@@ -1,3 +1,3 @@
 export enum ErrorCodes {
-  E1001 = 1001,
+  E10001 = 10001,
 }
