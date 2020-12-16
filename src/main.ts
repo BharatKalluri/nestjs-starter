@@ -49,7 +49,7 @@ async function startServer() {
   app.useGlobalInterceptors(new ErrorsInterceptor());
 
   logger.debug('Started Listening for Server Port');
-  await app.listen(3000);
+  await app.listen(8080);
 }
 
 startServer();
