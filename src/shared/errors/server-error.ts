@@ -1,13 +1,13 @@
-import { ErrorCodes } from '../constants/error-codes';
+import { ServerMessages } from '../constants/server-messages';
 
 export class ServerError extends Error {
-  errorCode: ErrorCodes;
+  serverMessage: ServerMessages;
   statusCode: number;
 
-  constructor(errorCode: ErrorCodes, message: string, statusCode: number) {
+  constructor(errorCode: ServerMessages, message: string, statusCode?: number) {
     super(message);
     this.name = 'ServerError';
-    this.errorCode = errorCode;
+    this.serverMessage = errorCode;
     this.statusCode = statusCode;
   }
 }

@@ -1,5 +1,5 @@
 {
-    "10001": {
+    "E10001": {
         "en": "Something went Wrong with AWS connection",
         "hi": "AWS कनेक्शन के साथ कुछ गलत हुआ"
     },
@@ -7,8 +7,8 @@
       "en": "Something went Wrong with Mongo connection",
       "hi": "मोंगो कनेक्शन के साथ कुछ गलत हो गया"
     },
-    "succesfully-created": {
-        "en": "Succesfully Created",
+    "successfully-created": {
+        "en": "Successfully Created",
         "hi": "सफलतापूर्वक बनाया गया"
     }
 }

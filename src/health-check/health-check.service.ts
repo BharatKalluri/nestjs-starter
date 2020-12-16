@@ -5,7 +5,7 @@ import { S3Service } from '../clients/s3/s3.service';
 import { Connection } from 'mongoose';
 import { InjectConnection } from '@nestjs/mongoose';
 import { ServerError } from '../shared/errors/server-error';
-import { ErrorCodes } from '../shared/constants/error-codes';
+import { ServerMessages } from '../shared/constants/server-messages';
 
 @Injectable()
 export class HealthCheckService {
@@ -17,7 +17,10 @@ export class HealthCheckService {
     logger.setContext(HealthCheckService.name);
   }
   getHealthCheck(): IHealthCheck {
-    // throw new ServerError(ErrorCodes.E10001, 'Sample error message');
+    // throw new ServerError(
+    //   ServerMessages.SUCCESSFULLY_CREATED,
+    //   'Sample error message',
+    // );
     return { success: true };
   }
 
@@ -28,7 +31,7 @@ export class HealthCheckService {
       return { success: true };
     } catch (e) {
       this.logger.error(e);
-      throw new ServerError(ErrorCodes.E10001, e.message, 400);
+      throw new ServerError(ServerMessages.E10001, e.message, 400);
     }
   }
 

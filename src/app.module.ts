@@ -6,9 +6,9 @@ import configuration from '../config/configuration';
 import { v4 as uuidv4 } from 'uuid';
 import { ClientsModule } from './clients/clients.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
-const env = _.get(process, 'env.NODE_ENV')
+const env = _.get(process, 'env.NODE_ENV');
 const configModule = ConfigModule.forRoot({
   isGlobal: true,
   load: [configuration],
@@ -21,7 +21,7 @@ const loggerModule = LoggerModule.forRoot({
       return uuidv4();
     },
     prettyPrint: env !== 'production',
-    level: env !== 'production' ? 'debug' : 'info'
+    level: env !== 'production' ? 'debug' : 'info',
   },
 });
 
