@@ -1,6 +1,5 @@
 version: 0.2
 
-# TODO: Copy config into codebase using aws cli at the build stage from S3
 # TODO: Run tests at pre_build stage
 # TODO: /dist, /npm_modules and package-*.json should be sufficient for artifacts, change and test
 
@@ -22,6 +21,7 @@ phases:
       - yarn build
   post_build:
     commands:
+      - aws s3 cp s3://nest-js-dev-env/config/config.json ./dist
       - echo Build completed on `date`
 artifacts:
   files:
