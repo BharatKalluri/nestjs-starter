@@ -1,7 +1,11 @@
 import { IConfiguration } from './configuration.interface';
 import * as configData from '../config.json';
 
-const nodeEnvironment: string = process.env.NODE_ENV;
+const nodeEnvironment: string | undefined = process.env.NODE_ENV;
+
+if (nodeEnvironment === undefined) {
+  throw Error(`NODE_ENV is not defined`);
+}
 
 if (!['production', 'staging', 'dev'].includes(nodeEnvironment)) {
   throw Error(

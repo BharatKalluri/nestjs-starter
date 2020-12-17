@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import * as rateLimit from 'express-rate-limit';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { ErrorsInterceptor } from './shared/interceptors/errors.interceptor';
 import { ConfigService } from '@nestjs/config';
 import { PinoLogger } from 'nestjs-pino';
@@ -10,7 +10,7 @@ import { PinoLogger } from 'nestjs-pino';
 const APP_NAME = 'Core ' + process.env.NODE_ENV;
 
 // Open API/Swagger setup, visit /swagger for Swagger UI
-async function swaggerModule(app) {
+async function swaggerModule(app: INestApplication) {
   const options = new DocumentBuilder()
     .setTitle(APP_NAME + ' server')
     .setDescription(APP_NAME + ' API description')
@@ -25,16 +25,16 @@ async function startServer() {
   const configService: ConfigService = app.get(ConfigService);
   const logger: PinoLogger = await app.resolve(PinoLogger);
 
-  // Middlewares
+  // Middleware
   // TODO: Change these as per project and scale Rate limiting: limit each IP to 100 requests per 15 minutes
   // TODO: Need to plan something else here, as it will not work properly with multiple processes.
-  logger.debug('Loading middlewares');
+  logger.debug('Loading middleware');
   app.use(
     rateLimit({
       windowMs: configService.get<number>('RATE_LIMIT_WINDOW_MS'),
       max: configService.get<number>('RATE_LIMIT_COUNT'),
       message: `Too many accounts created from this IP, please try again after ${
-        configService.get<number>('RATE_LIMIT_WINDOW_MS') / 60000
+        (configService.get<number>('RATE_LIMIT_WINDOW_MS') as number) / 60000
       } minutes`,
     }),
   );

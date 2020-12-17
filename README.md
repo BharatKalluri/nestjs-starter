@@ -27,26 +27,26 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 ## Installation
 
 ```bash
-$ npm install
+$ yarn
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
 
 ## Running the app using docker
 
 ```bash
-docker build -t server . && docker run -p 127.0.0.1:3000:3000 server 
+docker build -t server . && docker run -p 127.0.0.1:8080:8080 server 
 ```
 <small>`server` is just the image tag name, it could be anything</small>
 
@@ -61,12 +61,12 @@ docker build -t server . && docker run -p 127.0.0.1:3000:3000 server
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn test:cov
 ```
 
