@@ -1,0 +1,9 @@
+{
+  "mongo": {
+    "url": "mongodb://localhost:27017/database"
+  },
+  "rateLimit": {
+    "windowMS": 900000,
+    "count": 100
+  }
+}
