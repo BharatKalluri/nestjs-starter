@@ -1,7 +1,5 @@
 FROM node:14.15.1
 
-ENV PORT 3000
-
 # Create app directory
 RUN mkdir -p /app
 WORKDIR /app
@@ -14,6 +12,6 @@ RUN yarn
 COPY . .
 
 RUN yarn build
-EXPOSE 3000
+EXPOSE 8080
 
 CMD [ "yarn", "start" ]
