@@ -8,7 +8,7 @@
 
 Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc), and
 
-- JSON based config setup. Sample config at `config.example.json`
+- JSON based config setup. Sample config at `config.json`
 - JSON based Logging setup using [`Pino`](https://www.npmjs.com/package/pino)
 - Per request UUID logging for easier traceability
 - Docker setup
@@ -19,6 +19,8 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - Data validation using `class-validator`
 - Global exception handlers to capture `ServerError` with error codes and respond to client with corresponding error messages from `errorCodes.json`
 - Connected to MongoDB using `@nestjs/mongoose`, using URL from config.
+- Codebuild configuration setup (Uses `buildspec.yml` for build configuration and a env variable called `S3_BUCKET` for the bucket to retrieve `config.json` from. Go through the `buildspec.yml` for more information)
+- `Procfile` setup for elastic beanstalk to start the nestJS node process at port 8080  
 
 ## TODO
 
