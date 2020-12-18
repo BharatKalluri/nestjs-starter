@@ -21,7 +21,7 @@ phases:
       - yarn build
   post_build:
     commands:
-      - aws s3 cp s3://nest-js-dev-env/config/config.json ./dist
+      - aws s3 cp s3://$S3_BUCKET/config/config.json ./dist
       - echo Build completed on `date`
 artifacts:
   files:
