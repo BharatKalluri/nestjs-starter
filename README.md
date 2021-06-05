@@ -12,6 +12,7 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - JSON based Logging setup using [`Pino`](https://www.npmjs.com/package/pino)
 - Per request UUID logging for easier traceability
 - Docker setup
+- Firebase auth setup! Along with decorators which can be used at endpoint levels.
 - Sample module setup (`health-check`) with unit testing on service, and a sample e2e test.
 - AWS SDK integration, sample s3 client as a starting point
 - Rate limiting (pre configured to limit each IP to 100 requests per 15 minutes) using `express-rate-limit`

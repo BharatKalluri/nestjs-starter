@@ -5,5 +5,10 @@
   "rateLimit": {
     "windowMS": 900000,
     "count": 100
+  },
+  "firebase": {
+    "projectId": "",
+    "privateKey": "",
+    "clientEmail": ""
   }
 }

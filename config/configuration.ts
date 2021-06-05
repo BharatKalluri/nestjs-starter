@@ -17,4 +17,7 @@ export default (): IConfiguration => ({
   MONGODB_URI: configData.mongo.url,
   RATE_LIMIT_WINDOW_MS: configData.rateLimit.windowMS,
   RATE_LIMIT_COUNT: configData.rateLimit.count,
+  FIREBASE_APP_PROJECT_ID: configData.firebase.projectId,
+  FIREBASE_APP_PRIVATE_KEY: configData.firebase.privateKey,
+  FIREBASE_APP_CLIENT_EMAIL: configData.firebase.clientEmail,
 });
