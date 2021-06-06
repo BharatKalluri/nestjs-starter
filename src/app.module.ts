@@ -7,9 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { ClientsModule } from './clients/clients.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
-import * as _ from 'lodash';
+import { EnvironmentsEnum } from './shared/constants/environments.enum';
 
-const env = _.get(process, 'env.NODE_ENV');
+export const nodeEnv = process.env.NODE_ENV
+  ? (process.env.NODE_ENV.toLowerCase() as EnvironmentsEnum)
+  : EnvironmentsEnum.DEV;
+
 const configModule = ConfigModule.forRoot({
   isGlobal: true,
   load: [configuration],
@@ -21,8 +24,8 @@ const loggerModule = LoggerModule.forRoot({
     genReqId: () => {
       return uuidv4();
     },
-    prettyPrint: env !== 'production',
-    level: env !== 'production' ? 'debug' : 'info',
+    prettyPrint: nodeEnv !== EnvironmentsEnum.PROD,
+    level: nodeEnv !== EnvironmentsEnum.PROD ? 'debug' : 'info',
   },
 });
 

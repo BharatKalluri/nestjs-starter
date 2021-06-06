@@ -22,7 +22,8 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 - Global exception handlers to capture `ServerError` with error codes and respond to client with corresponding error messages from `errorCodes.json`
 - Connected to MongoDB using `@nestjs/mongoose`, using URL from config.
 - Codebuild configuration setup (Uses `buildspec.yml` for build configuration and a env variable called `S3_BUCKET` for the bucket to retrieve `config.json` from. Go through the `buildspec.yml` for more information)
-- `Procfile` setup for elastic beanstalk to start the nestJS node process at port 8080  
+- `Procfile` setup for elastic beanstalk to start the nestJS node process at port 8080
+- Pre commit hook which runs `tsc` and `prettier`
 
 ## TODO
 
@@ -31,7 +32,13 @@ Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc)
 ## Installation
 
 ```bash
-$ yarn
+yarn
+```
+
+to set up hooks
+
+```bash
+yarn setuphooks
 ```
 
 ## Running the app
