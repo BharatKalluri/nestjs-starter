@@ -1,5 +1,5 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
-import { FirebaseService } from '../../clients/firebase/firebase.service';
+import { FirebaseService } from '../providers/firebase/firebase.service';
 import * as _ from 'lodash';
 
 @Injectable()

@@ -2,10 +2,10 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { HealthCheckService } from './health-check.service';
 import { IHealthCheck } from './health-check.interface';
 import { PinoLogger } from 'nestjs-pino';
-import { FirebaseAuthGuard } from 'src/shared/guards/firebase-auth.guard';
+import { FirebaseAuthGuard } from 'src/guards/firebase-auth.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { firebaseToken } from '../shared/constants/bearer-auth-token-names';
-import { FirebaseAuthUserInfo } from '../shared/decorators/firebaseAuthUserInfo.decorator';
+import { firebaseToken } from '../../constants/bearer-auth-token-names';
+import { FirebaseAuthUserInfo } from '../../decorators/firebaseAuthUserInfo.decorator';
 import { auth } from 'firebase-admin/lib/auth';
 
 @Controller('health-check')

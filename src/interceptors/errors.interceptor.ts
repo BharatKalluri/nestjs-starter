@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import * as messages from '../../../messages.json';
+import messages from '../../messages';
 import { ServerError } from '../errors/server-error';
 import * as _ from 'lodash';
 
@@ -20,13 +20,10 @@ export class ErrorsInterceptor implements NestInterceptor {
         if (err instanceof ServerError) {
           const errorCode = err.serverMessage;
           const statusCode = err.statusCode;
-          const isMessagePresentForCode: boolean = messages.hasOwnProperty(
-            errorCode,
-          );
+          const isMessagePresentForCode: boolean =
+            messages.hasOwnProperty(errorCode);
 
           if (!isMessagePresentForCode) {
-            // TODO: Move from console errors to logger based errors
-            console.error(`Error message missing for error code ${errorCode}`);
             return throwError(new InternalServerErrorException(err.message));
           }
 

@@ -4,7 +4,7 @@ import { UserController } from './user.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from './schemas/user.schema';
 import { UserDao } from './user.dao';
-import { FirebaseModule } from '../clients/firebase/firebase.module';
+import { FirebaseModule } from '../../providers/firebase/firebase.module';
 
 @Module({
   imports: [

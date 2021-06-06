@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
-import { HealthCheckModule } from './health-check/health-check.module';
+import { HealthCheckModule } from './modules/health-check/health-check.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from 'nestjs-pino';
 import configuration from '../config/configuration';
 import { v4 as uuidv4 } from 'uuid';
-import { ClientsModule } from './clients/clients.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserModule } from './user/user.module';
-import { EnvironmentsEnum } from './shared/constants/environments.enum';
+import { UserModule } from './modules/user/user.module';
+import { EnvironmentsEnum } from './constants/environments.enum';
+import { FirebaseModule } from './providers/firebase/firebase.module';
+import { AwsModule } from './providers/aws/aws.module';
 
 export const nodeEnv = process.env.NODE_ENV
   ? (process.env.NODE_ENV.toLowerCase() as EnvironmentsEnum)
@@ -43,7 +44,8 @@ const mongooseModule = MongooseModule.forRootAsync({
     loggerModule,
     mongooseModule,
     HealthCheckModule,
-    ClientsModule,
+    FirebaseModule,
+    AwsModule,
     UserModule,
   ],
   controllers: [],

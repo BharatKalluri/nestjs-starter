@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { HealthCheckModule } from '../src/health-check/health-check.module';
-import { IHealthCheck } from '../src/health-check/health-check.interface';
+import { HealthCheckModule } from '../src/modules/health-check/health-check.module';
+import { IHealthCheck } from '../src/modules/health-check/health-check.interface';
 
 describe('HealthCheckController (e2e)', () => {
   let app: INestApplication;
