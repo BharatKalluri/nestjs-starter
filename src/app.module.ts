@@ -6,6 +6,7 @@ import configuration from '../config/configuration';
 import { v4 as uuidv4 } from 'uuid';
 import { ClientsModule } from './clients/clients.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { UserModule } from './user/user.module';
 import * as _ from 'lodash';
 
 const env = _.get(process, 'env.NODE_ENV');
@@ -40,6 +41,7 @@ const mongooseModule = MongooseModule.forRootAsync({
     mongooseModule,
     HealthCheckModule,
     ClientsModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],

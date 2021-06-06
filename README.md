@@ -8,6 +8,7 @@
 
 Everything nest js gives out of the box (Hot Reloading, testing with `jest` etc), and
 
+- A starter `User` mongoose schema with a get/create an endpoint using firebase user data
 - JSON based config setup. Sample config at `config.json`
 - JSON based Logging setup using [`Pino`](https://www.npmjs.com/package/pino)
 - Per request UUID logging for easier traceability
