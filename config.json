@@ -7,8 +7,8 @@
     "count": 100
   },
   "firebase": {
-    "projectId": "albert-hub",
-    "privateKey": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOJF9vzLx5d2l2\nxq1m1UkWSLjex08DTGDCnzQdhy3QnkMZU13jlstDl1L8o8GH4ev+2zKWW1bn+XkB\n68Zq0lrI1xi2C5SNoKSzrDZOVQ1EGOf9CetjgNnrllEuT7W91IwJs33RqEjJN7YL\nAAm4aReZYskqeFIYe5QgUBPtCxDUzQeQbz+c9ean6JsEATx+/Ewz/UJc7DGrkeHY\nC5BY2be2oBc2YMCyBoH7YeJ9QYXlvlUUuspqPcJWOnFjvjvlv2AdXRLlsyXmpwiC\nQGy6vd1fNJIkfiqe/o3VdXTZoO4ep2BK0LcnMZJIgWioob18OK4qztTKQ1Rr0z7C\nzhxym+1RAgMBAAECggEABx8KjPotqKSPaCME6oCDvdlVSZzpBdwlm5OUYVDCLGrL\nNpzCqZIUA4m+vCuMC/2qAWvhG4CcR/c+TuquOBJ8QGPt3pwXzay3A933Ik2d37Rc\nj0lAcHeLD7BprYfjZ2NoUw14Uz3VBd5+03J044H95raa7HSroVzjiRo7Ff1D35YF\nsHzEJ6vLKrFy9Vt/LI4qlnslX12UdWBZ5u7DcX5ubktg1JO0GIOn4tqhb2d4QJW/\nA5fiOHZWN3M9Oq6LeKQ5LdDQmuhDHl/sGydRoU91yj9mi/k3rn3kl8Jx85zG4qEe\nbIM1OncmGyurZ8NgqvtUMqbJ5IQBIZxVszfnpTNH4QKBgQD+Zp7R7C5+/S8ot32h\nebVxx+QrvhUQWuCci9DwZ4EveynqAY5Oh/UIMnTRvVLvFievaEF5hXILgLHC0gya\nthsCSafDR3fWEGR44l6VctVaf5iR1w9aj6Qw7SBkaEhE8QnfZEu6rntp35I0aXB+\nvfgeK/ZBPQDNN7j7bWKXkzLzKwKBgQDPcBhFYv1cFAo4ijN9KcLhIi11UZ21VZOA\nLWXGz6n0P8ewYKJtKhiqzSoXwaOL8xgMpVydvr1j3JsmNec1oafHbxKpqBWKyigM\nHFQu9I/2d+YWiSmme0Yc8mQ/s4aDQJx61g1iDJHo03nEl/rrtMEbiAGsgbzqEutN\nVbDZU8WTcwKBgAwFm3G+IIBdxJG/Ag/UaY+j65NpmyM3uC+Np+UEbyVoQ5XMVwY9\nBIZLpBuZP8cOm/d9DMMKXFZQ0ZWsSW4yNtqH0oa25OHXynev8tpLH+vz5ajWqeIU\nsaSiQAqepvOjFF1bJvz+a9SX/Re+99L1dTkvyKZSlKwd+v7er28MRLcbAoGATkww\nTRh1K2lBBmBb2PWHYnUFFZBN5+E6QJpiHS3LJ69fT1raVDwcfXPdXIQxmCSUwkk0\ncTJKyEO/qCeWcu7mpmdtcu5H21A8131l5SdYo55UEdOKDhXfvBNd9ZFsx2P+7HqZ\nKJY4CNqxzpvTEV7zuNGYWCXMScoEWPdsPkvZerMCgYEA4VaU8Wnuda9L38zUDWlT\n8prEXACyCp0URS3sVQYG7oKka7QJ3vWtwivyuaWKHQBStZCd0jO4SsdZdFe9Cofc\nU69v04kECVe4zqyYl++zwcQgWd637oiIcVLOXKPZY0Lppvzm6dUsk0xFqI+C2XQh\n3IGrQ5ZyhKkTZ5Hn7OcVhOg=\n-----END PRIVATE KEY-----\n",
-    "clientEmail": "firebase-adminsdk-39pgi@albert-hub.iam.gserviceaccount.com"
+    "projectId": "",
+    "privateKey": "",
+    "clientEmail": ""
   }
 }
