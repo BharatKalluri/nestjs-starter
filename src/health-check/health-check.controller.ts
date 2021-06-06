@@ -3,12 +3,13 @@ import { HealthCheckService } from './health-check.service';
 import { IHealthCheck } from './health-check.interface';
 import { PinoLogger } from 'nestjs-pino';
 import { FirebaseAuthGuard } from 'src/shared/guards/firebase-auth.guard';
-import { ApiBearerAuth } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { firebaseToken } from '../shared/constants/bearer-auth-token-names';
 import { FirebaseAuthUserInfo } from '../shared/decorators/firebaseAuthUserInfo.decorator';
 import { auth } from 'firebase-admin/lib/auth';
 
 @Controller('health-check')
+@ApiTags('Health check')
 export class HealthCheckController {
   constructor(
     private readonly healthCheckService: HealthCheckService,
