@@ -41,4 +41,17 @@ export class UserDao {
     }
     return phoneNumber ? this.getByPhoneNumber(phoneNumber) : null;
   }
+
+  async updateUser(
+    user: UserDocument,
+    context: {
+      phoneNumber?: string;
+    },
+  ): Promise<UserDocument> {
+    const { phoneNumber } = context;
+    if (phoneNumber) {
+      user.phoneNumber = phoneNumber;
+    }
+    return user.save();
+  }
 }
